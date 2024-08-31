@@ -5,11 +5,23 @@ import Foundation
 @main
 struct Handlens: AsyncParsableCommand {
   mutating func run() async throws {
+    // Init
     let recorder = ScreenRecorder()
+    let monitor = ClickMonitor()
+    
+    // Begin recording
     recorder.record_screen()
+    DispatchQueue.global().async {
+      monitor.start()
+    }
     print("Press any key to end recording...")
+    
+    // Wait for recording to finish
     _ = getch()
-    sleep(1)
-    print("Recording stopped. Editing...")
+    monitor.stop()
+    recorder.stopRecording()
+    print(monitor.clickEvents)
+    
+    print("[LOG] Recording stopped. Editing...")
   }
 }
