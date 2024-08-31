@@ -2,7 +2,8 @@
 
 Handlens is a powerful, open-source screen recording tool that brings professional-grade zoom effects to your captures - all from the command line.
 
-> [WARN] This project is currently a Work in Progress (WIP).
+> [!WARNING]
+> This project is currently a Work in Progress (WIP).
 
 ## Features
 
