@@ -23,7 +23,7 @@ Once you've cloned the repository, run the following commands:
 
 ```sh
 swift build -c release
-cp .build/release/Handlens ~/bin/handlens
+cp .build/arm64-apple-macosx/release/Handlens ~/bin/handlens
 ```
 
 Make sure `~/bin` is in your PATH.
