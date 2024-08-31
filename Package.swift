@@ -4,18 +4,18 @@
 import PackageDescription
 
 let package = Package(
-  name: "handlens",
-  dependencies: [
-    .package(url: "https://github.com/apple/swift-argument-parser.git", .upToNextMajor(from: "1.5.0"))
-  ],
-  targets: [
-    // Targets are the basic building blocks of a package, defining a module or a test suite.
-    // Targets can depend on other targets in this package and products from dependencies.
-    .executableTarget(
-      name: "handlens", dependencies: [
-        .product(name: "ArgumentParser", package: "swift-argument-parser"),
-      ]
-      
-    ),
-  ]
+    name: "handlens",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser.git", .upToNextMajor(from: "1.5.0")),
+    ],
+    targets: [
+        // Targets are the basic building blocks of a package, defining a module or a test suite.
+        // Targets can depend on other targets in this package and products from dependencies.
+        .executableTarget(
+            name: "handlens", dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+            ]
+
+        ),
+    ]
 )

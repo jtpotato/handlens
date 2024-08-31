@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  GetChar.swift
+//
 //
 //  Created by Joel Tan on 30/8/2024.
 //
@@ -10,17 +10,17 @@ import Foundation
 extension FileHandle {
     func enableRawMode() -> termios {
         var raw = termios()
-        tcgetattr(self.fileDescriptor, &raw)
+        tcgetattr(fileDescriptor, &raw)
 
         let original = raw
         raw.c_lflag &= ~UInt(ECHO | ICANON)
-        tcsetattr(self.fileDescriptor, TCSADRAIN, &raw)
+        tcsetattr(fileDescriptor, TCSADRAIN, &raw)
         return original
     }
 
     func restoreRawMode(originalTerm: termios) {
         var term = originalTerm
-        tcsetattr(self.fileDescriptor, TCSADRAIN, &term)
+        tcsetattr(fileDescriptor, TCSADRAIN, &term)
     }
 }
 
